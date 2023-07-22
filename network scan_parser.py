@@ -25,7 +25,7 @@ def time_calculate(start_time):
 def connection_initiated(host, port):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.connect(host, port)
+        sock.connect((host, port))
         if sock.connect ==0:
             print("Port is Open")
         else:
