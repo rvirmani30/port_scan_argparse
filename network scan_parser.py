@@ -6,8 +6,8 @@ from pyfiglet import Figlet
 
 
 #Displaying Banner
-custom_fig = Figlet(font='graffiti')
-print(custom_fig.renderText('Port Scan!!'))
+#custom_fig = Figlet(font='graffiti')
+#print(custom_fig.renderText('Port Scan!!'))
 
 
 #Timestamp of scan initiated
