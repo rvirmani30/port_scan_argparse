@@ -43,7 +43,7 @@ def scanparser():
     #setup argument parsing
     scan_parser = argparse.ArgumentParser(description='Port Scan initiated.')
     scan_parser.add_argument('-H', '--Host', help='Host to scan', type=int, required=True, dest='host')
-    scan_parser.add_argument('-P', '--Port', help='Port range to scan', default='443', type=int, choices=range(443,444), required=True, dest='port')
+    scan_parser.add_argument('-P', '--Port', help='Port range to scan', default='443', type=int, choices=range(1,65353), required=True, dest='port')
     scan_parser.add_argument('-U', help='UDP protocol', type=str)
     scan_parser.add_argument('-T', help='TCP Protocol', type=str)
     argparse_call = scan_parser.parse_args()
