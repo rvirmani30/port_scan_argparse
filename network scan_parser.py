@@ -25,6 +25,7 @@ def time_calculate(start_time):
 #Checking if the port is open or closed.
 def connection_initiated(host, port):
     try:
+        
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.connect((host, port))
         if sock.connect ==0:
@@ -44,11 +45,13 @@ def scanparser():
     scan_parser = argparse.ArgumentParser(description='Port Scan initiated.')
     scan_parser.add_argument('-H', '--Host', help='Host to scan', type=str, required=True, dest='Host')
     scan_parser.add_argument('-P', '--Port', help='Port range to scan', type=str, required=True, dest='Dport')
-    scan_parser.add_argument('-U', help='UDP protocol', type=str)
-    scan_parser.add_argument('-T', help='TCP Protocol', type=str)
+    scan_parser.add_argument('-U', help='UDP protocol', type=str, dest= 'UDP')
+    scan_parser.add_argument('-T', help='TCP Protocol', type=str, dest= 'TCP')
     argparse_call = scan_parser.parse_args()
     host = argparse_call.Host
     port = argparse_call.Dport
+    tcp = argparse_call.TCP
+    udp = argparse_call.UDP
     
     if ',' in port:
         range_port = port.split(',')
